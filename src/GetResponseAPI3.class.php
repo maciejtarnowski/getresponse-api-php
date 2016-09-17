@@ -328,6 +328,17 @@ class GetResponse
     }
 
     /**
+     * add from field
+     *
+     * @param $params
+     * @return mixed
+     */
+    public function addFromField($params)
+    {
+        return $this->call('from-fields/', 'POST', $params);
+    }
+
+    /**
      * Curl run request
      *
      * @param null $api_method

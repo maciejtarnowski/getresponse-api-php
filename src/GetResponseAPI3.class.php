@@ -54,6 +54,14 @@ class GetResponse
     }
 
     /**
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->api_key;
+    }
+
+    /**
      * get account details
      *
      * @return mixed

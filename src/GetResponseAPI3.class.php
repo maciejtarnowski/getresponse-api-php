@@ -12,22 +12,22 @@
 class GetResponse
 {
 
-    private $api_key;
-    private $api_url = 'https://api.getresponse.com/v3';
-    private $timeout = 8;
+    protected $api_key;
+    protected $api_url = 'https://api.getresponse.com/v3';
+    protected $timeout = 8;
     public $http_status;
 
     /**
      * X-Domain header value if empty header will be not provided
      * @var string|null
      */
-    private $enterprise_domain = null;
+    protected $enterprise_domain = null;
 
     /**
      * X-APP-ID header value if empty header will be not provided
      * @var string|null
      */
-    private $app_id = null;
+    protected $app_id = null;
 
     /**
      * Set api key and optionally API endpoint
@@ -356,7 +356,7 @@ class GetResponse
      * @return mixed
      * @throws Exception
      */
-    private function call($api_method = null, $http_method = 'GET', $params = array())
+    protected function call($api_method = null, $http_method = 'GET', $params = array())
     {
         if (empty($api_method)) {
             return (object)array(
@@ -412,7 +412,7 @@ class GetResponse
      *
      * @return string
      */
-    private function setParams($params = array())
+    protected function setParams($params = array())
     {
         $result = array();
         if (is_array($params)) {
